@@ -48,39 +48,237 @@
 				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 					<script type="text/template">
 						## Benchmark Tools Categories
-						#### TSimulus
+
+						Big data projects involve processing of large amounts of data in a short period of time. This operation requires heavy computing resources and smooth data flow in the network. Architectural issues in the system can lead to performance bottlenecks in the process, which can impact the availability of the application. This can have impact on the success of the project. Performance testing of the system is required to avoid the above issues. Here we measure metrics like throughput, memory utilization, CPU utilization, time taken to complete a task etc. It is also recommended to run failover tests to validate the fault tolerance of the system and ensure that if some nodes fail, other nodes will take up the processing.
+
+
+						#### TSimulus ~ Sensor Simulator
 						Tool made at CETIC for generating time series values that can be used to test all the BigData infrastructure. With TSimulus, we can simulate sensors and generate a sufficient amount of data to test the platform.
 
 						#### Load Testing
 						Load Testing tools: it is a kind of Performance Testing which determines a system's performance under real-life load conditions. This testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
 
 						#### Monitoring
-						Monitoring tool: Services and infrastructure monitoring tools provide information on the state of the system (memory usage, CPU, error logs, disk space, network connectivity, ...). These tools should be coupled with the Load testing tests and TSimulus tests, to be able to monitor the different components during the tests.
+						Monitoring tool: Services and infrastructure monitoring tools provide information on the state of the system (memory usage, CPU, error logs, disk space, network connectivity, ...). These tools should be coupled with the Load testing tests and/or with TSimulus tests, to be able to monitor the different components during the tests.
 
 					</script>
 				</section>
 				<section>
 					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### TSimulus
+						## TSimulus
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						<h2>Blabla</h2>
+						#### Tsimulus Origins
+						* TSimulus - An opensource realistic time series generator
+						* made@CETIC
+						* Mathieu Goemine: Créateur de TSimulus, Chercheur Expert Big Data 
+						* Alexandre Nuttinck: Contributeur de TSimulus, Chercheur Cloud Computing Département SST@CETIC
+						EAM-SDI: projet de recherche avec Guardis
+						Domaine spécifique de la gestion automatique d’infrastructures.
+						Récolter les données cpus, ventilateurs, …
+						Faire du monitoring, réactions fâce aux évenements.
+						Problème: absence de données réelles et en temps réelles.
+						solution permettant la simulation d'un grand nombre de capteurs remontant de l'information auprès d'un système de collecte et d'analyse 
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						#### TSimulus, c’est quoi?
+						
+						TSimulus (formally, RTS-Gen) is a tool for generating random, yet realistic, time series values. 
+
+						Série chronologique?
+						séquence ordonnée de points dans le temps, chacun d'entre eux étant associé à au plus une valeur.
+						timestamp → valeur (typiquement, réel)
+						utilisée dans une grande variété de domaines.
+
+						Aléatoires, mais réalistes?
+						bruit convaincant
+						modèles, patterns
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						#### Fonctionnement
+						* TSimulus - An opensource realistic time series generator
+						En entrée: Un DSL pour décrire « l’allure » des séries
+							Cycles (quotidiens, hebdomadaires)
+							Bruit (blanc, ARMA)
+							Combinaisons
+							Conditions
+						Add JSON
+						En sortie: triplets (série, timestamp, valeur)
+						Add Image
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						#### Contenu
+						* Maintenue sur readthedocs (http://tsimulus.readthedocs.io)
+						* Introduction, générateurs, exemples, …
+						* La bibliothèque
+							Pur Scala (jar téléchargeable depuis Maven Central)
+							Développement sur Github (https://github.com/cetic/TSimulus)
+						* Le CLI
+							Prend en entrée un fichier de configuration et produit du CSV sur la sortie standard.
+							https://github.com/cetic/tsimulus-cli
+						* Le micro-service
+							API akka, envoi d’un fichier de configuration en POST
+							Possible de générer une valeure sur POST ou un ensemble de valeurs
+							CSV en réponse
+							Image Docker disponible: https://hub.docker.com/r/ceticasbl/tsimulus-ms/
+							https://github.com/cetic/tsimulus-ms
+						Faire du monitoring, réactions fâce aux évenements.
+						Problème: absence de données réelles et en temps réelles.
+						solution permettant la simulation d'un grand nombre de capteurs remontant de l'information auprès d'un système de collecte et d'analyse 
 					</section>
 				</section>
 				<section>
 					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Load Testing
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						<h2>Blabla</h2>
+						## TSAAS
+
+						There is also an other work that is in progress at CETIC: TSimulus As A Service (TSAAS) where the project aims at building a REST API in front of the TSimulus framework, and a set of configurable websocket routes to consume the TSimulus stream.
+
+						The backend implements the core logic for the stream handling. It includes
+						 - wrapping the TSimulus library for generating streams,
+						 - exposing a configuration and control REST API,
+						 - exposing websocket routes fed by outputs of the generator
+						 - handling the timing of data injection into the websockets.
+						 - processing templates for custom rendering of the generated data.
 					</section>
 				</section>
 				<section>
 					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Monitoring
+						## Load Testing
+						Kind of Performance Testing which determines a system's performance under real-life load conditions.
+						This type of testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						<h2>Blabla</h2>
+						#### Locust
+						* https://github.com/locustio/locust (8,889*,last release 0.9.0 September 2018)
+						* Locust is a scalable user load testing tool written in Python. 
+						* Locust is a simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. It can also help you figure out how many concurrent users a system can handle. It can define the behaviour you want for each of your Locust instances. It also gives you the ability to monitor the swarming process from a web UI in real time. Features of Locust are the ability to create your test scenarios using straight Python, to scale a number of users you need to emulate, a nice Web-based UI, is good for testing APIs.
+						image: https://locust.io/ , https://www.saashub.com/locust-alternatives , https://github.com/locustio/locust/issues/688
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						Gatling: https://github.com/gatling/gatling (3,967* last release 14 Apr 2016). Gatling is a stress tool built on Scala, Akka and Netty. It allows you to test and measure your application’s end-to-end performance. (Features: It has a simple yet powerful DSL, Scala, Scenario recorder.) Gatling generates web-based visualisations of test results automatically.
+						image: https://gatling.io/ , https://gatling.io/docs/2.2/general/reports/ , https://gatling.io/docs/2.3/http/recorder/					
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						Tsung: https://github.com/processone/tsung (1,728* last release 29 Aug 2017). Tsung is an open-source, multi-protocol distributed load testing tool. It can monitor a client’s CPU, memory, and network traffic. (Features: HTTP recorder, HTML reports and graphs, scenarios written in XML)
+						image: http://tsung.erlang-projects.org/2015/07/tsung-1.6.0-released/
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						JMeter: http://jmeter.apache.org/ seems to be the "most" popular open-source tool in the load testing space. Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. (performance test a host of technologies such as Java Objects, Web HTTP/HTTPS, SOAP and Rest Services, FTP, Databases with JDBC, IDE you can use for recording, building and debugging your performance tests, Starting with JMeter 3.1 Groovy is the default programming language, Scenarios written in XML…). But after using it in few projects, it appeared that there are some drawbacks: the gui, xml, …
+						image: https://sqa.stackexchange.com/questions/16916/performance-testing-analysing-graph-results-in-jmeter
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						Taurus https://github.com/Blazemeter/taurus  (819*, last release 1.13.2 December 2018) is an Automation-friendly framework for Continuous Testing. It can be seen as an abstraction layer on top of the technologies described here before. The power of Taurus is that it allows you to write your tests in YAML. You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file. (written in YAML, fits performance testing into your CI/CD pipeline, Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium, Interesting framework for CI/CD).
+						image: https://github.com/Blazemeter/taurus
+
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/nagios.jpg" />
+								</td>
+								<td class="fragment fade-left" align="center">
+									<h4>vs &nbsp;&nbsp; Distributed SCM</h4>
+									<img class="plain" data-src="img/zabbix-logo.jpg">
+									<p class="fragment fade-left">No a-priori structure</p>
+								</td>
+							</tr>
+						</table>
+
+					</section>
+				</section>
+				<section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>
+						<p> Monitoring is the process of gathering hardware and software measures and ensuring that the service is working as intended. </p>
+						<p> Monitoring is done by means of checks on average response times, error and request rates, CPU / RAM / ... usage and application availability. </p>
+						<p> A complete monitoring system will provide a dashboard to check the system health, usage, and send alerts when something is not running properly. It can also be extended to react to changes in the system state (scale the backend when under high load, restart an unresponsive service, ...). </p>
+						<p> Monitoring the platform consists to check the health of the containers and the health of the orchestrator (Kubernetes). The establishment of mechanisms for monitoring the proper functioning of the solution at several levels of the solution is recommended. </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>
+						<h4> Infrastructure Monitoring </h4>
+						
+						<p> In order to monitor the state of the infrastructure (such as the CPU / memory usage of the servers, the disk space, ...), a tool like Zabbix, Nagios or Icinga is recommended.  </p>
+
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/nagios.jpg" width="320"/>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/zabbix-logo.jpg" width="320">
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/icinga-logo.png" width="320">
+								</td>
+							</tr>
+						</table>
+						<p> Cloud providers have also their own monitoring tools. For instance, AWS provides the Cloudwatch service or Google Cloud provides the Stackdriver service that fulfill this role. </p>
+						<p> Sources: <a href="https://www.nagios.org/">Nagios</a>, <a href="https://www.zabbix.com/">Zabbix</a>, <a href="https://icinga.com/">Icinga</a>. </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>
+						<h4> Infrastructure Monitoring </h4>
+						
+						<img class="plain" data-src="img/zabbix-interface.png" />
+
+						<p> Source: <a href="https://www.zabbix.com/">Zabbix</a>. </p>
+					</section>
+
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>
+						<h4> Service Monitoring </h4>
+
+						<p> Service monitoring via a Service Mesh, a dedicated infrastructure layer that ensures communication between services. 
+						<p> It is implemented as an array of lightweight proxies that are deployed on top of applications. </p> 
+						<p> Service mesh software handles routing, load balancing, provides logging, telemetry, etc. </p>
+
+						<img class="arrow-right" data-src="img/istio-logo.png" width="320"/>
+
+						<p> <b>Istio</b> is a new Microservice service mesh manager for making microservice deployments less complex and eases the strain on development teams. It is a completely open source service mesh that layers transparently onto existing distributed applications. It is also a platform which includes APIs that let it integrate into any logging platform, telemetry or policy system.
+
+						<p> Source:  <a href=" https://istio.io/">Istio</a>. </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>
+						<h4> Service Monitoring </h4>
+
+						<img class="plain" data-src="img/kiali-dashboard.png" width="1500"/>
+
+						<p> Source: :  <a href="https://github.com/kiali/kiali">Service mesh observability Kiali</a>, <a href="https://raw.githubusercontent.com/kiali/kiali.io/master/static/images/features/graph-overview.png">Kiali Dashboard</a>.  </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>						
+						<h4> Service Status </h4>
+
+						<p> In order to monitor in real time the availability of the Big Data Platform, an external monitoring service must be set up. This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. A tool like <b>UptimeRobot</b> offers such a service (free basic formula), as well as a status dashboard. </p>
+						<p> <a href="https://status.cetic.be">Example of use of the free UptimeRobot service at CETIC.</a>  </p>
+						
+						<p> Source: <a href="https://uptimerobot.com/">UptimeRobot</a>. </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Monitoring </h2>						
+						<h4>  Management of application logs </h4>
+
+						<p> In order to easily monitor and consult the application logs (errors, warnings, debug), to audit / trace the actions of the users a posteriori (for example in case of audit), it is recommended to set up a tool for log management to centralize logs of the Big Data Platform components and other system components. The ELK application stack: ElasticSearch, Logstash, Kibana can be integrated with the Big Data Platform. Others tools provided by Cloud providers can also do the same work sush as Cloudwatch from AWS or Stackdriver from Google Cloud. </p>
+
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/elastic-logo.png" height="320"/>
+									<p> Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. </p>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/logstash-logo.png" height="320">
+									<p> Logstash is an open source, server-side data processing pipeline that ingests data (e.g. log records) from a multitude of sources simultaneously, transforms it, and then sends it. </p>	
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/kibana-logo.png" height="320">
+									<img class="plain" data-src="img/kibana-dashboard.png" width="700"/>
+									<p> Source: <a href="https://sematext.com/blog/how-to-ship-kibana-server-logs-to-elasticsearch/">Image source</a>. </p>
+								</td>
+							</tr>
+						</table>
+
 					</section>
 				</section>
 				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
@@ -215,64 +413,6 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-		</script>
-
-		<script type="text/javascript">
-            TESTER = document.getElementById('plotly_test1');
-            data = [
-                {
-					type: 'scatterpolar',
-					r: [39, 28, 8, 7, 58, 98],
-					theta: ['Integration','Distributed','Multi-tenancy', 'HCI', 'API', 'Workflow tools', 'Licensing and documentation', 'Exploitation'],
-					fill: 'toself',
-					name: 'Apache Beam'
-            	},
-                {
-                    type: 'scatterpolar',
-                    r: [56, 10, 22, 88, 78, 12],
-                    theta: ['Integration','Distributed','Multi-tenancy', 'HCI', 'API', 'Workflow tools', 'Licensing and documentation', 'Exploitation'],
-                    fill: 'toself',
-                    name: 'Streampipes'
-                }
-            ];
-
-            layout = {
-                polar: {
-                    radialaxis: {
-                        visible: true,
-                        range: [0, 100]
-                    }
-                },
-                showlegend: true
-            };
-            Plotly.plot(TESTER, data, layout);
-
-            TESTER2 = document.getElementById('plotly_test2');
-            data2 = [
-                {
-                    type: 'bar',
-                    y: [39, 28, 8, 7, 58, 98],
-                    x: ['Integration','Distributed','Multi-tenancy', 'HCI', 'API', 'Workflow tools', 'Licensing and documentation', 'Exploitation'],
-                    fill: 'toself',
-                    name: 'Apache Beam'
-                },
-                {
-                    type: 'bar',
-                    y: [56, 10, 22, 88, 78, 12],
-                    x: ['Integration','Distributed','Multi-tenancy', 'HCI', 'API', 'Workflow tools', 'Licensing and documentation', 'Exploitation'],
-                    fill: 'toself',
-                    name: 'Streampipes'
-                }
-            ];
-
-            layout2 = {
-                title : "Data processing comparison",
-                barmode: 'group',
-                bargap: 0.15,
-                bargroupgap: 0.1
-            };
-            Plotly.plot(TESTER2, data2, layout2);
-
 		</script>
 			</div>
 		</div>
