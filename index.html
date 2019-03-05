@@ -64,125 +64,253 @@
 					</script>
 				</section>
 				<section>
-					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						## TSimulus
-					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Tsimulus Origins
-						* TSimulus - An opensource realistic time series generator
-						* made@CETIC
-						* Mathieu Goemine: Créateur de TSimulus, Chercheur Expert Big Data 
-						* Alexandre Nuttinck: Contributeur de TSimulus, Chercheur Cloud Computing Département SST@CETIC
-						EAM-SDI: projet de recherche avec Guardis
-						Domaine spécifique de la gestion automatique d’infrastructures.
-						Récolter les données cpus, ventilateurs, …
-						Faire du monitoring, réactions fâce aux évenements.
-						Problème: absence de données réelles et en temps réelles.
-						solution permettant la simulation d'un grand nombre de capteurs remontant de l'information auprès d'un système de collecte et d'analyse 
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### TSimulus, c’est quoi?
-						
-						TSimulus (formally, RTS-Gen) is a tool for generating random, yet realistic, time series values. 
+						<h2> TSimulus </h2>
 
-						Série chronologique?
-						séquence ordonnée de points dans le temps, chacun d'entre eux étant associé à au plus une valeur.
-						timestamp → valeur (typiquement, réel)
-						utilisée dans une grande variété de domaines.
-
-						Aléatoires, mais réalistes?
-						bruit convaincant
-						modèles, patterns
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Fonctionnement
-						* TSimulus - An opensource realistic time series generator
-						En entrée: Un DSL pour décrire « l’allure » des séries
-							Cycles (quotidiens, hebdomadaires)
-							Bruit (blanc, ARMA)
-							Combinaisons
-							Conditions
-						Add JSON
-						En sortie: triplets (série, timestamp, valeur)
-						Add Image
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Contenu
-						* Maintenue sur readthedocs (http://tsimulus.readthedocs.io)
-						* Introduction, générateurs, exemples, …
-						* La bibliothèque
-							Pur Scala (jar téléchargeable depuis Maven Central)
-							Développement sur Github (https://github.com/cetic/TSimulus)
-						* Le CLI
-							Prend en entrée un fichier de configuration et produit du CSV sur la sortie standard.
-							https://github.com/cetic/tsimulus-cli
-						* Le micro-service
-							API akka, envoi d’un fichier de configuration en POST
-							Possible de générer une valeure sur POST ou un ensemble de valeurs
-							CSV en réponse
-							Image Docker disponible: https://hub.docker.com/r/ceticasbl/tsimulus-ms/
-							https://github.com/cetic/tsimulus-ms
-						Faire du monitoring, réactions fâce aux évenements.
-						Problème: absence de données réelles et en temps réelles.
-						solution permettant la simulation d'un grand nombre de capteurs remontant de l'information auprès d'un système de collecte et d'analyse 
-					</section>
-				</section>
-				<section>
-					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						## TSAAS
-
-						There is also an other work that is in progress at CETIC: TSimulus As A Service (TSAAS) where the project aims at building a REST API in front of the TSimulus framework, and a set of configurable websocket routes to consume the TSimulus stream.
-
-						The backend implements the core logic for the stream handling. It includes
-						 - wrapping the TSimulus library for generating streams,
-						 - exposing a configuration and control REST API,
-						 - exposing websocket routes fed by outputs of the generator
-						 - handling the timing of data injection into the websockets.
-						 - processing templates for custom rendering of the generated data.
-					</section>
-				</section>
-				<section>
-					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						## Load Testing
-						Kind of Performance Testing which determines a system's performance under real-life load conditions.
-						This type of testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						#### Locust
-						* https://github.com/locustio/locust (8,889*,last release 0.9.0 September 2018)
-						* Locust is a scalable user load testing tool written in Python. 
-						* Locust is a simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. It can also help you figure out how many concurrent users a system can handle. It can define the behaviour you want for each of your Locust instances. It also gives you the ability to monitor the swarming process from a web UI in real time. Features of Locust are the ability to create your test scenarios using straight Python, to scale a number of users you need to emulate, a nice Web-based UI, is good for testing APIs.
-						image: https://locust.io/ , https://www.saashub.com/locust-alternatives , https://github.com/locustio/locust/issues/688
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						Gatling: https://github.com/gatling/gatling (3,967* last release 14 Apr 2016). Gatling is a stress tool built on Scala, Akka and Netty. It allows you to test and measure your application’s end-to-end performance. (Features: It has a simple yet powerful DSL, Scala, Scenario recorder.) Gatling generates web-based visualisations of test results automatically.
-						image: https://gatling.io/ , https://gatling.io/docs/2.2/general/reports/ , https://gatling.io/docs/2.3/http/recorder/					
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						Tsung: https://github.com/processone/tsung (1,728* last release 29 Aug 2017). Tsung is an open-source, multi-protocol distributed load testing tool. It can monitor a client’s CPU, memory, and network traffic. (Features: HTTP recorder, HTML reports and graphs, scenarios written in XML)
-						image: http://tsung.erlang-projects.org/2015/07/tsung-1.6.0-released/
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						JMeter: http://jmeter.apache.org/ seems to be the "most" popular open-source tool in the load testing space. Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. (performance test a host of technologies such as Java Objects, Web HTTP/HTTPS, SOAP and Rest Services, FTP, Databases with JDBC, IDE you can use for recording, building and debugging your performance tests, Starting with JMeter 3.1 Groovy is the default programming language, Scenarios written in XML…). But after using it in few projects, it appeared that there are some drawbacks: the gui, xml, …
-						image: https://sqa.stackexchange.com/questions/16916/performance-testing-analysing-graph-results-in-jmeter
-					</section>
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						Taurus https://github.com/Blazemeter/taurus  (819*, last release 1.13.2 December 2018) is an Automation-friendly framework for Continuous Testing. It can be seen as an abstraction layer on top of the technologies described here before. The power of Taurus is that it allows you to write your tests in YAML. You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file. (written in YAML, fits performance testing into your CI/CD pipeline, Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium, Interesting framework for CI/CD).
-						image: https://github.com/Blazemeter/taurus
+						An opensource realistic time series generator made at <a href="https://www.cetic.be">CETIC</a>.
 
 						<table class="imageset">
 							<tr>
 								<td align="center">
-									<img class="plain" data-src="img/nagios.jpg" />
+									<img class="plain" data-src="img/mg.jpg" width="250"/>
+									<p> <b> Mathieu Goemine </b> </p>
+									<p> TSimulus Creator </p>
+									<p> <a href="https://www.cetic.be/Mathieu-Goeminne?lang=en"> Expert Research Engineer in Big Data </a> </p> 
+									<p> <a href="mailto:mathieu.goeminne@cetic.be"> mathieu.goeminne@cetic.be </a> </p>
+									<p> <a href="https://www.linkedin.com/in/mathieu-goeminne-724ab99/"> Linkedin </a> </p>
 								</td>
-								<td class="fragment fade-left" align="center">
-									<h4>vs &nbsp;&nbsp; Distributed SCM</h4>
-									<img class="plain" data-src="img/zabbix-logo.jpg">
-									<p class="fragment fade-left">No a-priori structure</p>
+								<td align="center">
+									<img class="plain" data-src="img/an.jpg" width="250">
+									<p> <b> Alexandre Nuttinck </b> </p>
+									<p> TSimulus Contributor </p>
+									<p> <a href="https://www.cetic.be/Alexandre-Nuttinck?lang=en"> Research Engineer in Cloud Computing </a> </p>
+									<p> <a href="mailto:alexandre.nuttinck@cetic.be"> alexandre.nuttinck@cetic.be </a> </p>
+									<p> <a href="https://www.linkedin.com/in/alexandre-nuttinck/"> Linkedin </a> </p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> TSimulus </h2>
+						<h4> Origins </h4>
+						
+						 <ul>
+						  <li> EAM-SDI: research project with <a href="https://www.guardis.com/index.html"> Guardis</a>. </li>
+						  <li> Specific area of ​​automatic infrastructure management. </li>
+						  <li> Collect data of cpus, fans, ... </li>
+						  <li> Monitoring, take reactions against events. </li>
+						  <li> Problem: lack of real data and in real time. </li>
+						  <li> The solution was to simulate a large number of sensors gathering information from a collection and analysis system.</li>
+						</ul>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> TSimulus </h2>
+						<h4> What is TSimulus?</h4>
+
+						<p> TSimulus (formally, RTS-Gen) is a tool for generating random, yet realistic, time series values. </p> 						
+
+						<h5> Time series? </h5>
+
+						<ul>
+						  <li> An ordered sequence of points in time, each of them is associated with at most one value. </li>
+						  <li> Timestamp → value (typically, real). </li>
+						  <li> Used in a wide variety of fields. </li>
+						</ul>
+
+						<p> <h5> Random but realistic? </h5> </p>
+
+						<ul>
+						  <li> Convincing sound. </li>
+						  <li> Models, patterns. </li>
+						</ul>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> TSimulus </h2>
+						<h4> How TSimulus works?</h4>
+
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<p>In input</p>
+									<img class="plain" data-src="img/tsimulusconfig.png" width="800"/>
+									<p>A DSL that describes "the look" of the timeseries</p>
+									<p>Cycles (daily, weekly)</p>
+									<p>Noise (white, ARMA)</p>
+									<p>combinations</p>
+									<p>conditions</p>
+								</td>
+								<td align="center">
+									<p>Output</p>
+									<img class="plain" data-src="img/tsimulusgraph.png" width="800"/>
+									<p> triplets (series, timestamp, value)</p>
 								</td>
 							</tr>
 						</table>
 
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						## TSimulus
+						#### Documentation
+
+						* Maintained on readthedocs: http://tsimulus.readthedocs.io
+						* The library
+							* Scala (jar downloadable from Maven Central)
+							* Development on Github (https://github.com/cetic/TSimulus)
+						* The CLI: https://github.com/cetic/tsimulus-cli
+							* Reads configuration documents from a regular JSON file and produces a CSV file containing the time series.
+						
+						* The microservice: https://github.com/cetic/tsimulus-ms
+							* API akka, sending a configuration file in POST
+							* Possible to generate a value on POST or a set of values
+							* CSV in response
+							* Docker image available: https://hub.docker.com/r/ceticasbl/tsimulus-ms/
+					</section>
+				</section>
+				<section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						## TSAAS ~ TSimulus as a Service
+
+						Work that is in progress at CETIC: TSimulus As A Service (TSAAS) where the project aims at
+						* building a REST API in front of the TSimulus framework.
+						* set of configurable websocket routes to consume the TSimulus stream.
+					</section>
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						## TSAAS ~ TSimulus as a Service
+						#### TSimulus as Sensors simulator
+
+						SCHEMA + VIDEO Here!
+					</section>
+				</section>
+				<section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>
+						<p> Kind of Performance Testing which determines a system's performance under real-life load conditions. </p> 
+						<p> This type of testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes. </p>
+						<ul>
+						  <li>feed the system the largest task it can handle</li>
+						  <li>increase the load</li>
+						  <li>simulate virtual users</li>
+						  <li>expose defects</li>
+						  <li>determine the upper limit for all components</li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/locust-logo.png" width="200"/>
+									<p> <a href="https://locust.io/"> Locust</a> </p>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/gatling-logo.png" width="300">
+									<p> <a href="https://gatling.io/"> Gatling</a> </p>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/jmeter-logo.png" width="300">
+									<p> <a href="https://locust.io/"> JMeter</a> </p>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/tsung-logo.png" width="300">
+									<p> <a href="https://locust.io/"> Tsung</a> </p>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/taurus-logo.png" width="300">
+									<p> <a href="https://locust.io/"> Taurus</a> </p>
+								</td>
+							</tr>
+						</table>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>					
+						<h4> Locust </h4>
+						 <ul>
+						  <li> Scalable user load testing tool written in Python. </li>
+						  <li> Simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. It can also help you figure out how many concurrent users a system can handle. It can define the behaviour you want for each of your Locust instances. It also gives you the ability to monitor the swarming process from a web UI in real time. Features of Locust are the ability to create your test scenarios using straight Python, to scale a number of users you need to emulate, a nice Web-based UI, is good for testing APIs.</li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/locust-dashboard.png" width="900"/>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/locust-charts.png" width="900">
+								</td>
+							</tr>
+						</table>
+						<p> Sources: <a href="https://locust.io/"> Locust</a>, <a href="https://www.saashub.com/locust-alternatives"> Locust Dashboard Image </a>, <a href="https://github.com/locustio/locust/issues/688"> Locust Charts Image</a>. </p>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>					
+						<h4> Gatling </h4>
+						 <ul>
+						  <li> Stress tool built on Scala, Akka and Netty. </li>
+						  <li> Allows you to test and measure your application’s end-to-end performance. (Features: It has a simple yet powerful DSL, Scala, Scenario recorder.) Gatling generates web-based visualisations of test results automatically. </li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/gatling-interface.png" width="900"/>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/gatling-charts.png" width="900">
+								</td>
+							</tr>
+						</table>
+						<p> Sources: <a href="https://gatling.io/"> Gatling</a>, <a href="https://gatling.io/docs/2.3/http/recorder/"> Gatling Dashboard Image </a>, <a href="https://gatling.io/docs/2.2/general/reports/"> Gatling Charts Image</a>. </p>				
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>					
+						<h4> Tsung </h4>
+						 <ul>
+						  <li> Open-source, multi-protocol distributed load testing tool. </li>
+						  <li> It can monitor a client’s CPU, memory, and network traffic. (Features: HTTP recorder, HTML reports and graphs, scenarios written in XML) </li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/tsung-dashboard1.png" width="900"/>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/tsung-dashboard2.png" width="900">
+								</td>
+							</tr>
+						</table>
+						<p> Sources: <a href="https://github.com/processone/tsung"> Tsung</a>, <a href="http://tsung.erlang-projects.org/2015/07/tsung-1.6.0-released/"> Tsung Dashboard Image </a>, <a href="http://tsung.erlang-projects.org/screenshots.en.html"> Tsung Charts Image</a>. </p>	
+					</section>
+
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>					
+						<h4> JMeter </h4>
+						 <ul>
+						  <li> "most" popular open-source tool in the load testing space. </li>
+						  <li> Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. (performance test a host of technologies such as Java Objects, Web HTTP/HTTPS, SOAP and Rest Services, FTP, Databases with JDBC, IDE you can use for recording, building and debugging your performance tests, Starting with JMeter 3.1 Groovy is the default programming language, Scenarios written in XML…). But after using it in few projects, it appeared that there are some drawbacks: the gui, xml, … </li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/jmeter.png" width="900"/>
+								</td>
+							</tr>
+						</table>
+						<p> Sources: <a href="https://jmeter.apache.org/"> JMeter</a>, <a href="https://sqa.stackexchange.com/questions/16916/performance-testing-analysing-graph-results-in-jmeter"> JMeter Dashboard Image.</a> </p>
+					</section>
+
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> Load Testing </h2>					
+						<h4> Taurus </h4>
+						 <ul>
+						  <li> Automation-friendly framework for Continuous Testing. It can be seen as an abstraction layer on top of the technologies described here before. </li>
+						  <li> The power of Taurus is that it allows you to write your tests in YAML. You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file. (written in YAML, fits performance testing into your CI/CD pipeline, Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium, Interesting framework for CI/CD). </li>
+						</ul> 
+						<table class="imageset">
+							<tr>
+								<td align="center">
+									<img class="plain" data-src="img/tsung-dashboard1.png" width="900"/>
+								</td>
+								<td align="center">
+									<img class="plain" data-src="img/tsung-dashboard2.png" width="900">
+								</td>
+							</tr>
+						</table>
+						<p> Sources: <a href="https://github.com/Blazemeter/taurus"> Taurus</a>. </p>	
 					</section>
 				</section>
 				<section>
@@ -264,16 +392,17 @@
 						<table class="imageset">
 							<tr>
 								<td align="center">
-									<img class="plain" data-src="img/elastic-logo.png" height="320"/>
+									<img class="plain" data-src="img/elastic-logo.png" width="500"/>
 									<p> Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. </p>
 								</td>
 								<td align="center">
-									<img class="plain" data-src="img/logstash-logo.png" height="320">
+									<img class="plain" data-src="img/logstash-logo.png" width="200">
 									<p> Logstash is an open source, server-side data processing pipeline that ingests data (e.g. log records) from a multitude of sources simultaneously, transforms it, and then sends it. </p>	
 								</td>
 								<td align="center">
-									<img class="plain" data-src="img/kibana-logo.png" height="320">
-									<img class="plain" data-src="img/kibana-dashboard.png" width="700"/>
+									<img class="plain" data-src="img/kibana-logo.png" width="200">
+									<p> Kibana is an open source data visualization plugin for Elasticsearch. </p>
+									<img class="plain" data-src="img/kibana-dashboard.png" width="1000"/>
 									<p> Source: <a href="https://sematext.com/blog/how-to-ship-kibana-server-logs-to-elasticsearch/">Image source</a>. </p>
 								</td>
 							</tr>
@@ -281,21 +410,23 @@
 
 					</section>
 				</section>
-				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+				<section>
+					<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 					<script type="text/template">
 						## NewTech4Steel Benchmark tools list
 						### Data transfer performance
 						* Target Conclusion: Assessing the speed of data transfer from data sources to a data lake via broker (without any evaluation).
 						* Constraints/ settable parameters: Source, network transfer rate, hardware deployment (processor power, memory, …)
 					</script>
-				</section>
-				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					</section>
+					<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 					<script type="text/template">
 						## NewTech4Steel Benchmark tools list
 						### Model evaluation performance
 						* Target Conclusion: Assessing the processing speed of a test model with specified test data considering different constraints.
 						* Constraints/ settable parameters: Source, network transfer rate, hardware deployment (processor power, memory, …).
 					</script>
+					</section>
 				</section>
 				<!-- This is the last page section -->
 				<section class="lastpage" data-background-image="img/background-lastpage.png">
