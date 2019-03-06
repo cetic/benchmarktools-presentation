@@ -46,33 +46,43 @@
 						Slides are available here: https://benchmarktools.presentations.cetic.be
 					</script>
 				</section>
-				<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-					<script type="text/template">
-						## Benchmark Tools Categories
+				<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2>Benchmark Tools Categories</h2>
 
-						#### TSimulus ~ Sensors Simulator
-						
-						Tool made at [CETIC](https://www.cetic.be) for generating time series values that can be used to test all the BigData infrastructure. 
-						
-						With TSimulus, we can simulate sensors and generate a sufficient amount of data to test the platform.
+						<table>
+							<tr>
+								<td align="center">	
+									<h4>TSimulus ~ Sensors Simulator</h4>
+									<p>Tool made at <a href="https://www.cetic.be">CETIC</a>.</p>
+									<p>With TSimulus, we can: </p>
+									<p>simulate sensors. </p>
+									<p>generate a sufficient amount of data to test the Big Data platform.</p>
+								</td>
+								<td align="center">
+									<h4> Load Testing </h4>
+									
+									<p>Kind of Performance Testing.</p>
 
-						#### Load Testing
-						
-						Kind of Performance Testing which determines a system's performance under real-life load conditions. 
-							
-						Helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
-
-						#### Monitoring
-						
-						Services and infrastructure monitoring tools provide information on the state of the system (memory usage, CPU, error logs, disk space, network connectivity, ...).
-	 
-						These tools should be coupled with the Load testing tests and/or with TSimulus tests, to be able to monitor the different components during these tests.
+									<p>Determines a system's performance under real-life load conditions. </p>
+										
+									<p>Helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.</p>
+								</td>
+								<td align="center">
+									<h4> Monitoring </h4>
+									<p>Services and infrastructure monitoring tools provide information on the state of the system.</p>
+									<p>Should be coupled with the Load testing tests and/or with TSimulus.</p>
+								</td>
+							</tr>
+						</table>
 						
 						<aside class="notes">
+
+						(memory usage, CPU, error logs, disk space, network connectivity, ...)
+						, to be able to monitor the different components during these tests
 						Big data projects involve processing of large amounts of data in a short period of time. This operation requires heavy computing resources and smooth data flow in the network. Architectural issues in the system can lead to performance bottlenecks in the process, which can impact the availability of the application. This can have impact on the success of the project. Performance testing of the system is required to avoid the above issues. Here we measure metrics like throughput, memory utilization, CPU utilization, time taken to complete a task etc. It is also recommended to run failover tests to validate the fault tolerance of the system and ensure that if some nodes fail, other nodes will take up the processing.
 						</aside>
 
-					</script>
+					
 				</section>
 				<section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
@@ -83,7 +93,7 @@
 						<table class="imageset">
 							<tr>
 								<td align="center">
-									<img class="plain" data-src="img/mg.jpg" width="250"/>
+									<img class="plain" data-src="img/mg.jpg" />
 									<p> <b> Mathieu Goemine </b> </p>
 									<p> TSimulus Creator </p>
 									<p> <a href="https://www.cetic.be/Mathieu-Goeminne?lang=en"> Expert Research Engineer in Big Data </a> </p> 
@@ -91,7 +101,7 @@
 									<p> <a href="https://www.linkedin.com/in/mathieu-goeminne-724ab99/"> Linkedin </a> </p>
 								</td>
 								<td align="center">
-									<img class="plain" data-src="img/an.jpg" width="250">
+									<img class="plain" data-src="img/an.jpg">
 									<p> <b> Alexandre Nuttinck </b> </p>
 									<p> TSimulus Contributor </p>
 									<p> <a href="https://www.cetic.be/Alexandre-Nuttinck?lang=en"> Research Engineer in Cloud Computing </a> </p>
@@ -243,9 +253,9 @@
 						 <ul>
 						  <li> Scalable user load testing tool written in Python. </li>
 						  <li> Simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. </li>
-						  <li> It can also help you figure out how many concurrent users a system can handle. </li>
-						  <li> It can define the behaviour you want for each of your Locust instances. </li>
-						  <li> It also gives you the ability to monitor the swarming process from a web UI in real time. </li>
+						  <li> Help you figure out how many concurrent users a system can handle. </li>
+						  <li> Define the behaviour you want for each of your Locust instances. </li>
+						  <li> Gives you the ability to monitor the swarming process from a web UI in real time. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -265,7 +275,7 @@
 						 <ul>
 						  <li> Stress tool built on Scala, Akka and Netty. </li>
 						  <li> Allows you to test and measure your application’s end-to-end performance. </li>
-						  <li> Gatling generates web-based visualisations of test results automatically. </li>
+						  <li> Generates web-based visualisations of test results automatically. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -287,7 +297,7 @@
 						<h4> Tsung </h4>
 						 <ul>
 						  <li> Open-source, multi-protocol distributed load testing tool. </li>
-						  <li> It can monitor a client’s CPU, memory, and network traffic. </li>
+						  <li> Can monitor a client’s CPU, memory, and network traffic. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -310,7 +320,7 @@
 						<h4> JMeter </h4>
 						 <ul>
 						  <li> "Most" popular open-source tool in the load testing space. </li>
-						  <li> Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. </li>
+						  <li> Java application designed specifically for load testing with the ability to measure performance. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -330,9 +340,9 @@
 						#### Taurus </h4>
 						 
 						* Automation-friendly framework for Continuous Testing.
-						* It can be seen as an abstraction layer on top of the technologies described here before.
-						* he power of Taurus is that it allows you to write your tests in YAML. 
- 						* You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file.
+						* Abstraction layer on top of the technologies described here before.
+						* Allows you to write your tests in YAML. 
+ 						* Describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file.
 						* Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium.
 						* Interesting framework for CI/CD.
 
@@ -368,7 +378,8 @@
 						  <li> Infrastructure Monitoring </li>
 						  <li> Service Monitoring </li>
 						</ul> 
-						<p> A complete monitoring system will provide a dashboard to check the system health, usage, and send alerts when something is not running properly. It can also be extended to react to changes in the system state (scale the backend when under high load, restart an unresponsive service, ...). </p>
+						<p> A complete monitoring system will provide a dashboard to check the system health, usage, and send alerts when something is not running properly.</p> 
+						<p> It can also be extended to react to changes in the system state (scale the backend when under high load, restart an unresponsive service, ...). </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>
@@ -400,7 +411,7 @@
 						</table>
 
 						<p>can do the job!</p>
-						<p> Cloud providers have also their own monitoring tools. For instance, AWS provides the Cloudwatch service or Google Cloud provides the Stackdriver service that fulfill this role. </p>
+						<p> Cloud providers have also their own monitoring tools. For instance, Cloudwatch for AWS or Stackdriver for Google Cloud. </p>
 						<p> Sources: <a href="https://www.nagios.org/">Nagios</a>, <a href="https://www.zabbix.com/">Zabbix</a>, <a href="https://icinga.com/">Icinga</a>. </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
@@ -416,13 +427,19 @@
 						<h2> Monitoring </h2>
 						<h4> Service Monitoring </h4>
 
-						<p> Service monitoring via a Service Mesh, a dedicated infrastructure layer that ensures communication between services. 
-						<p> It is implemented as an array of lightweight proxies that are deployed on top of applications. </p> 
-						<p> Service mesh software handles routing, load balancing, provides logging, telemetry, etc. </p>
+						<p> Service Mesh = a dedicated infrastructure layer that ensures communication between services. 
+						<p> Array of lightweight proxies that are deployed on top of applications. </p> 
+						<p> Handles routing, load balancing, provides logging, telemetry, etc. </p>
 
 						<img class="arrow-right" data-src="img/istio-logo.png" width="320"/>
 
-						<p> <b>Istio</b> is a new Microservice service mesh manager for making microservice deployments less complex and eases the strain on development teams. It is a completely open source service mesh that layers transparently onto existing distributed applications. It is also a platform which includes APIs that let it integrate into any logging platform, telemetry or policy system.
+						<p> <b>Istio</b> </p>
+						<ul>
+						  <li> New Microservice service mesh manager for making microservice deployments less complex. </li>
+						  <li> Eases the strain on development teams. </li>
+						  <li> Completely open source service mesh that layers transparently onto existing distributed applications. </li>
+						  <li> Includes APIs that let it integrate into any logging platform, telemetry or policy system. </li>
+						</ul> 
 
 						<p> Source:  <a href=" https://istio.io/">Istio</a>. </p>
 					</section>
@@ -438,10 +455,15 @@
 						<h2> Monitoring </h2>						
 						<h4> Service Status </h4>
 
-						<p> To monitor in real time the availability of the Big Data Platform, an external monitoring service must be set up. This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. A tool like <b>UptimeRobot</b> offers such a service (free basic formula), as well as a status dashboard. </p>
-						<p> <a href="https://status.cetic.be">Example of use of the free UptimeRobot service at CETIC.</a>  </p>
+						<p> An external monitoring service must be set up! </p>
+						<p> This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. </p>
+						<p> A tool like <b>UptimeRobot</b> offers such a service (free basic formula), as well as a status dashboard. </p>
+						<p> <a href="https://status.cetic.be">Example of use of the free UptimeRobot service at CETIC.</a> </p>
 						
 						<p> Source: <a href="https://uptimerobot.com/">UptimeRobot</a>. </p>
+						<aside class="notes">
+						To monitor in real time the availability of the Big Data Platform, an external monitoring service must be set up. This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. A tool like UptimeRobot offers such a service (free basic formula), as well as a status dashboard.
+						</aside>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>						
@@ -468,7 +490,7 @@
 								</td>
 								<td align="center">
 									<img class="plain" data-src="img/kibana-logo.png" width="300">
-									<p> Kibana is an open source data visualization plugin for Elasticsearch. </p> 
+									<p> Open source data visualization plugin for Elasticsearch. </p> 
 									<p> Provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. </p> 
 									<img class="plain" data-src="img/kibana-dashboard.png" width="1000"/>
 									<p> Source: <a href="https://sematext.com/blog/how-to-ship-kibana-server-logs-to-elasticsearch/">Image source</a>. </p>
@@ -599,8 +621,10 @@
 			Reveal.initialize({
 				history: true,
 				slideNumber: true,
-				width: "100%",
-				height: "100%",
+				width: 2160,
+				height: 1575,
+				minScale: 0.5,
+				maxScale: 1.5,
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
