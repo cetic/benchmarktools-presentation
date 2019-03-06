@@ -38,9 +38,10 @@
 					<script type="text/template">
 						# Summary
 						## Benchmark Tools Categories
-						### TSimulus tool
-						### Load Testing tools
-						### Monitoring tools
+						### TSimulus
+						### Load Testing
+						### Monitoring
+						## Proposed Solution
 						
 						Slides are available here: https://benchmarktools.presentations.cetic.be
 					</script>
@@ -49,17 +50,27 @@
 					<script type="text/template">
 						## Benchmark Tools Categories
 
-						Big data projects involve processing of large amounts of data in a short period of time. This operation requires heavy computing resources and smooth data flow in the network. Architectural issues in the system can lead to performance bottlenecks in the process, which can impact the availability of the application. This can have impact on the success of the project. Performance testing of the system is required to avoid the above issues. Here we measure metrics like throughput, memory utilization, CPU utilization, time taken to complete a task etc. It is also recommended to run failover tests to validate the fault tolerance of the system and ensure that if some nodes fail, other nodes will take up the processing.
-
-
-						#### TSimulus ~ Sensor Simulator
-						Tool made at CETIC for generating time series values that can be used to test all the BigData infrastructure. With TSimulus, we can simulate sensors and generate a sufficient amount of data to test the platform.
+						#### TSimulus ~ Sensors Simulator
+						
+						Tool made at [CETIC](https://www.cetic.be) for generating time series values that can be used to test all the BigData infrastructure. 
+						
+						With TSimulus, we can simulate sensors and generate a sufficient amount of data to test the platform.
 
 						#### Load Testing
-						Load Testing tools: it is a kind of Performance Testing which determines a system's performance under real-life load conditions. This testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
+						
+						Kind of Performance Testing which determines a system's performance under real-life load conditions. 
+							
+						Helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.
 
 						#### Monitoring
-						Monitoring tool: Services and infrastructure monitoring tools provide information on the state of the system (memory usage, CPU, error logs, disk space, network connectivity, ...). These tools should be coupled with the Load testing tests and/or with TSimulus tests, to be able to monitor the different components during the tests.
+						
+						Services and infrastructure monitoring tools provide information on the state of the system (memory usage, CPU, error logs, disk space, network connectivity, ...).
+	 
+						These tools should be coupled with the Load testing tests and/or with TSimulus tests, to be able to monitor the different components during these tests.
+						
+						<aside class="notes">
+						Big data projects involve processing of large amounts of data in a short period of time. This operation requires heavy computing resources and smooth data flow in the network. Architectural issues in the system can lead to performance bottlenecks in the process, which can impact the availability of the application. This can have impact on the success of the project. Performance testing of the system is required to avoid the above issues. Here we measure metrics like throughput, memory utilization, CPU utilization, time taken to complete a task etc. It is also recommended to run failover tests to validate the fault tolerance of the system and ensure that if some nodes fail, other nodes will take up the processing.
+						</aside>
 
 					</script>
 				</section>
@@ -170,22 +181,30 @@
 					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						## TSAAS ~ TSimulus as a Service
 
+						https://git.cetic.be/TSimulus/tsimulus-saas 
+
 						Work that is in progress at CETIC: TSimulus As A Service (TSAAS) where the project aims at
 						* building a REST API in front of the TSimulus framework.
 						* set of configurable websocket routes to consume the TSimulus stream.
 					</section>
-					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						## TSAAS ~ TSimulus as a Service
-						#### TSimulus as Sensors simulator
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> TSAAS ~ TSimulus as a Service </h2>
+						<h4> TSimulus as Sensors simulator </h4>
 
-						SCHEMA + VIDEO Here!
+						<img class="plain" data-src="img/iteration1.png" width="1500"/>
+					</section>
+					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h2> TSAAS ~ TSimulus as a Service </h2>
+						<h4> TSimulus as Sensors simulator </h4>
+
+						 <video width="1300">
+						    <source data-src="video/tsimulus.mp4" type="video/mp4" />
+						 </video>
 					</section>
 				</section>
 				<section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Load Testing </h2>
-						<p> Kind of Performance Testing which determines a system's performance under real-life load conditions. </p> 
-						<p> This type of testing helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes. </p>
 						<ul>
 						  <li>feed the system the largest task it can handle</li>
 						  <li>increase the load</li>
@@ -223,7 +242,10 @@
 						<h4> Locust </h4>
 						 <ul>
 						  <li> Scalable user load testing tool written in Python. </li>
-						  <li> Simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. It can also help you figure out how many concurrent users a system can handle. It can define the behaviour you want for each of your Locust instances. It also gives you the ability to monitor the swarming process from a web UI in real time. Features of Locust are the ability to create your test scenarios using straight Python, to scale a number of users you need to emulate, a nice Web-based UI, is good for testing APIs.</li>
+						  <li> Simple-to-use, distributed, user load testing tool and used to help load test web sites or other applications. </li>
+						  <li> It can also help you figure out how many concurrent users a system can handle. </li>
+						  <li> It can define the behaviour you want for each of your Locust instances. </li>
+						  <li> It also gives you the ability to monitor the swarming process from a web UI in real time. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -242,7 +264,8 @@
 						<h4> Gatling </h4>
 						 <ul>
 						  <li> Stress tool built on Scala, Akka and Netty. </li>
-						  <li> Allows you to test and measure your application’s end-to-end performance. (Features: It has a simple yet powerful DSL, Scala, Scenario recorder.) Gatling generates web-based visualisations of test results automatically. </li>
+						  <li> Allows you to test and measure your application’s end-to-end performance. </li>
+						  <li> Gatling generates web-based visualisations of test results automatically. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -254,14 +277,17 @@
 								</td>
 							</tr>
 						</table>
-						<p> Sources: <a href="https://gatling.io/"> Gatling</a>, <a href="https://gatling.io/docs/2.3/http/recorder/"> Gatling Dashboard Image </a>, <a href="https://gatling.io/docs/2.2/general/reports/"> Gatling Charts Image</a>. </p>				
+						<p> Sources: <a href="https://gatling.io/"> Gatling</a>, <a href="https://gatling.io/docs/2.3/http/recorder/"> Gatling Dashboard Image </a>, <a href="https://gatling.io/docs/2.2/general/reports/"> Gatling Charts Image</a>. </p>
+						<aside class="notes">
+						(Features: It has a simple yet powerful DSL, Scala, Scenario recorder.) 
+						</aside>				
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Load Testing </h2>					
 						<h4> Tsung </h4>
 						 <ul>
 						  <li> Open-source, multi-protocol distributed load testing tool. </li>
-						  <li> It can monitor a client’s CPU, memory, and network traffic. (Features: HTTP recorder, HTML reports and graphs, scenarios written in XML) </li>
+						  <li> It can monitor a client’s CPU, memory, and network traffic. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -274,58 +300,90 @@
 							</tr>
 						</table>
 						<p> Sources: <a href="https://github.com/processone/tsung"> Tsung</a>, <a href="http://tsung.erlang-projects.org/2015/07/tsung-1.6.0-released/"> Tsung Dashboard Image </a>, <a href="http://tsung.erlang-projects.org/screenshots.en.html"> Tsung Charts Image</a>. </p>	
+						<aside class="notes">
+						(Features: HTTP recorder, HTML reports and graphs, scenarios written in XML) 
+						</aside>
 					</section>
 
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Load Testing </h2>					
 						<h4> JMeter </h4>
 						 <ul>
-						  <li> "most" popular open-source tool in the load testing space. </li>
-						  <li> Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. (performance test a host of technologies such as Java Objects, Web HTTP/HTTPS, SOAP and Rest Services, FTP, Databases with JDBC, IDE you can use for recording, building and debugging your performance tests, Starting with JMeter 3.1 Groovy is the default programming language, Scenarios written in XML…). But after using it in few projects, it appeared that there are some drawbacks: the gui, xml, … </li>
+						  <li> "Most" popular open-source tool in the load testing space. </li>
+						  <li> Apache JMeter describes itself as a Java application that was designed specifically for load testing with the ability to measure performance. </li>
 						</ul> 
 						<table class="imageset">
 							<tr>
 								<td align="center">
-									<img class="plain" data-src="img/jmeter.png" width="900"/>
+									<img class="plain" data-src="img/jmeter.png" width="1200"/>
 								</td>
 							</tr>
 						</table>
 						<p> Sources: <a href="https://jmeter.apache.org/"> JMeter</a>, <a href="https://sqa.stackexchange.com/questions/16916/performance-testing-analysing-graph-results-in-jmeter"> JMeter Dashboard Image.</a> </p>
-					</section>
+							<aside class="notes">
+							(performance test a host of technologies such as Java Objects, Web HTTP/HTTPS, SOAP and Rest Services, FTP, Databases with JDBC, IDE you can use for recording, building and debugging your performance tests, Starting with JMeter 3.1 Groovy is the default programming language, Scenarios written in XML…). But after using it in few projects, it appeared that there are some drawbacks: the gui, xml, …
+							</aside>
+						</section>
 
-					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-						<h2> Load Testing </h2>					
-						<h4> Taurus </h4>
-						 <ul>
-						  <li> Automation-friendly framework for Continuous Testing. It can be seen as an abstraction layer on top of the technologies described here before. </li>
-						  <li> The power of Taurus is that it allows you to write your tests in YAML. You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file. (written in YAML, fits performance testing into your CI/CD pipeline, Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium, Interesting framework for CI/CD). </li>
-						</ul> 
-						<table class="imageset">
-							<tr>
-								<td align="center">
-									<img class="plain" data-src="img/tsung-dashboard1.png" width="900"/>
-								</td>
-								<td align="center">
-									<img class="plain" data-src="img/tsung-dashboard2.png" width="900">
-								</td>
-							</tr>
-						</table>
-						<p> Sources: <a href="https://github.com/Blazemeter/taurus"> Taurus</a>. </p>	
+					<section data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						## Load Testing				
+						#### Taurus </h4>
+						 
+						* Automation-friendly framework for Continuous Testing.
+						* It can be seen as an abstraction layer on top of the technologies described here before.
+						* he power of Taurus is that it allows you to write your tests in YAML. 
+ 						* You can actually describe a full-blown script in about ten lines of text, which gives teams the ability to describe their tests in a YAML or JSON file.
+						* Abstraction layer on top of Locust, Gatling, JMeter, ... and also Selenium.
+						* Interesting framework for CI/CD.
+
+						```
+						execution:
+						- scenario: existing
+						  concurrency: 50
+						  ramp-up: 1m
+						  hold-for: 2m
+
+						scenarios:
+						  existing:
+						    headers:
+						      add-one: myval
+						    script: existing.jmx
+						    modifications:
+						      disable:
+						      - https://redirector.gvt1.com/edgedl/chrome/dict/en-us-7-1.bdic
+
+						reporting:
+						- junit-xml
+						```
+
+						Source: [Taurus](https://github.com/Blazemeter/taurus), [Code Source](https://github.com/Blazemeter/taurus/blob/master/examples/jmeter/existing.yml).
 					</section>
 				</section>
 				<section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>
-						<p> Monitoring is the process of gathering hardware and software measures and ensuring that the service is working as intended. </p>
-						<p> Monitoring is done by means of checks on average response times, error and request rates, CPU / RAM / ... usage and application availability. </p>
+						<p> Process of gathering hardware and software measures and ensuring that the service is working as intended. </p>
+						<p> <b> Monitoring categories </b> </p>
+						<ul>
+						  <li> Infrastructure Monitoring </li>
+						  <li> Service Monitoring </li>
+						</ul> 
 						<p> A complete monitoring system will provide a dashboard to check the system health, usage, and send alerts when something is not running properly. It can also be extended to react to changes in the system state (scale the backend when under high load, restart an unresponsive service, ...). </p>
-						<p> Monitoring the platform consists to check the health of the containers and the health of the orchestrator (Kubernetes). The establishment of mechanisms for monitoring the proper functioning of the solution at several levels of the solution is recommended. </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>
 						<h4> Infrastructure Monitoring </h4>
 						
-						<p> In order to monitor the state of the infrastructure (such as the CPU / memory usage of the servers, the disk space, ...), a tool like Zabbix, Nagios or Icinga is recommended.  </p>
+						<p> To monitor the state of the infrastructure, sush as</p>
+						<ul>
+						  <li> CPU usage </li>
+						  <li> Memory usage </li>
+						  <li> Disk space </li>
+						  <li> Average response times </li>
+						  <li> Errors and requests rates </li>
+						  <li> ... </li>
+						</ul> 
+						<p>a tool like: </p>
 
 						<table class="imageset">
 							<tr>
@@ -340,6 +398,8 @@
 								</td>
 							</tr>
 						</table>
+
+						<p>can do the job!</p>
 						<p> Cloud providers have also their own monitoring tools. For instance, AWS provides the Cloudwatch service or Google Cloud provides the Stackdriver service that fulfill this role. </p>
 						<p> Sources: <a href="https://www.nagios.org/">Nagios</a>, <a href="https://www.zabbix.com/">Zabbix</a>, <a href="https://icinga.com/">Icinga</a>. </p>
 					</section>
@@ -372,36 +432,44 @@
 
 						<img class="plain" data-src="img/kiali-dashboard.png" width="1500"/>
 
-						<p> Source: :  <a href="https://github.com/kiali/kiali">Service mesh observability Kiali</a>, <a href="https://raw.githubusercontent.com/kiali/kiali.io/master/static/images/features/graph-overview.png">Kiali Dashboard</a>.  </p>
+						<p> Source: <a href="https://github.com/kiali/kiali">Service mesh observability Kiali</a>, <a href="https://raw.githubusercontent.com/kiali/kiali.io/master/static/images/features/graph-overview.png">Kiali Dashboard</a>.  </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>						
 						<h4> Service Status </h4>
 
-						<p> In order to monitor in real time the availability of the Big Data Platform, an external monitoring service must be set up. This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. A tool like <b>UptimeRobot</b> offers such a service (free basic formula), as well as a status dashboard. </p>
+						<p> To monitor in real time the availability of the Big Data Platform, an external monitoring service must be set up. This service regularly polls the Big Data Platform and notifies (by email, SMS, ...) the system administrators in case of unavailability. A tool like <b>UptimeRobot</b> offers such a service (free basic formula), as well as a status dashboard. </p>
 						<p> <a href="https://status.cetic.be">Example of use of the free UptimeRobot service at CETIC.</a>  </p>
 						
 						<p> Source: <a href="https://uptimerobot.com/">UptimeRobot</a>. </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Monitoring </h2>						
-						<h4>  Management of application logs </h4>
+						<h4> Management of application logs </h4>
 
-						<p> In order to easily monitor and consult the application logs (errors, warnings, debug), to audit / trace the actions of the users a posteriori (for example in case of audit), it is recommended to set up a tool for log management to centralize logs of the Big Data Platform components and other system components. The ELK application stack: ElasticSearch, Logstash, Kibana can be integrated with the Big Data Platform. Others tools provided by Cloud providers can also do the same work sush as Cloudwatch from AWS or Stackdriver from Google Cloud. </p>
+						<p> To easily monitor and consult the application logs (errors, warnings, debug), to audit / trace the actions of the users a posteriori (for example in case of audit), it is recommended to set up a tool for log management to centralize logs of the Big Data Platform components and other system components. </p>
+						<p> The <b> ELK </b> application stack: ElasticSearch, Logstash, Kibana can be integrated with the Big Data Platform. </p>
 
 						<table class="imageset">
 							<tr>
 								<td align="center">
 									<img class="plain" data-src="img/elastic-logo.png" width="500"/>
-									<p> Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. </p>
+									<p> Search engine based on the Lucene library.</p>
+									<p> Distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.</p>
+									<p> Java.</p>
+									<p> Apache open source project.</p> 
 								</td>
 								<td align="center">
 									<img class="plain" data-src="img/logstash-logo.png" width="200">
-									<p> Logstash is an open source, server-side data processing pipeline that ingests data (e.g. log records) from a multitude of sources simultaneously, transforms it, and then sends it. </p>	
+									<p> Server-side data processing pipeline that ingests data (e.g. log records) from a multitude of sources simultaneously, </p>
+									<p> transforms it, </p>
+									<p> and then sends it. </p>
+									<p> Open source project.</p> 	
 								</td>
 								<td align="center">
-									<img class="plain" data-src="img/kibana-logo.png" width="200">
-									<p> Kibana is an open source data visualization plugin for Elasticsearch. </p>
+									<img class="plain" data-src="img/kibana-logo.png" width="300">
+									<p> Kibana is an open source data visualization plugin for Elasticsearch. </p> 
+									<p> Provides visualization capabilities on top of the content indexed on an Elasticsearch cluster. </p> 
 									<img class="plain" data-src="img/kibana-dashboard.png" width="1000"/>
 									<p> Source: <a href="https://sematext.com/blog/how-to-ship-kibana-server-logs-to-elasticsearch/">Image source</a>. </p>
 								</td>
@@ -410,23 +478,20 @@
 
 					</section>
 				</section>
-				<section>
-					<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+				<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 					<script type="text/template">
 						## NewTech4Steel Benchmark tools list
 						### Data transfer performance
 						* Target Conclusion: Assessing the speed of data transfer from data sources to a data lake via broker (without any evaluation).
 						* Constraints/ settable parameters: Source, network transfer rate, hardware deployment (processor power, memory, …)
-					</script>
-					</section>
-					<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-					<script type="text/template">
-						## NewTech4Steel Benchmark tools list
+
 						### Model evaluation performance
 						* Target Conclusion: Assessing the processing speed of a test model with specified test data considering different constraints.
 						* Constraints/ settable parameters: Source, network transfer rate, hardware deployment (processor power, memory, …).
+
+						### Proposed Solution
+						Use TSimulus as a load testing tool to simulate sensors, generate data and send it to the Big Data Platform, coupled with monitoring tools (eg, Istio / Zabbix / ELK).
 					</script>
-					</section>
 				</section>
 				<!-- This is the last page section -->
 				<section class="lastpage" data-background-image="img/background-lastpage.png">
