@@ -55,24 +55,24 @@
 									<h4>TSimulus ~ Sensors Simulator</h4>
 									<p>Tool made at <a href="https://www.cetic.be">CETIC</a>.</p>
 									<p>With TSimulus, we can: </p>
-									<p>simulate sensors. </p>
-									<p>generate a sufficient amount of data to test the Big Data platform.</p>
+						 <ul>
+						  <li> simulate sensors. </li>
+						  <li> generate a sufficient amount of data to test the Big Data platform. </li>
+						</ul>
 								</td>
 								<td align="center">	
-									<p> input for </p>
+									<p> <b>input for</b> </p>
 									<img class="plain" data-src="img/arrow.png">
 								</td>
 								<td align="center">
-									<h4> Load Testing </h4>
+									<h4>Performance / Load Testing </h4>
 									
-									<p>Kind of Performance Testing.</p>
-
 									<p>Determines a system's performance under real-life load conditions. </p>
 										
-									<p>Helps determine how the application behaves when multiple users access it simultaneously or when there are usage spikes.</p>
+									<p>Helps determine how the application behaves when there are usage spikes.</p>
 								</td>
 								<td align="center">	
-									<p> input for </p>
+									<p> <b>input for</b> </p>
 									<img class="plain" data-src="img/arrow.png">
 								</td>
 								<td align="center">
@@ -142,14 +142,15 @@
 
 						<ul>
 						  <li> An ordered sequence of points in time, each of them is associated with at most one value. </li>
-						  <li> Timestamp → value (typically, real). </li>
+						  <li> Timestamp → value (typically, real).</li>
+						  <li> example: 2018-03-12T14:00:00.000 - 20°C</li>
 						  <li> Used in a wide variety of fields. </li>
 						</ul>
 
 						<p> <h5> Random but realistic? </h5> </p>
 
 						<ul>
-						  <li> Convincing sound. </li>
+						  <li> Convincing noise. </li>
 						  <li> Models, patterns. </li>
 						</ul>
 					</section>
@@ -189,8 +190,8 @@
 							* Reads configuration documents from a regular JSON file and produces a CSV file containing the time series.
 						
 						* The microservice: https://github.com/cetic/tsimulus-ms
-							* API akka, sending a configuration file in POST
-							* Possible to generate a value on POST or a set of values
+							* API akka, sending a configuration file in POST request
+							* Possible to generate a value on POST request or a set of values
 							* CSV in response
 							* Docker image available: https://hub.docker.com/r/ceticasbl/tsimulus-ms/
 					</section>
@@ -226,11 +227,11 @@
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h2> Load Testing </h2>
 						<ul>
-						  <li>feed the system the largest task it can handle</li>
+						  <li>feed the system with requests the largest task it can handle</li>
 						  <li>increase the load</li>
-						  <li>simulate virtual users</li>
+						  <li>simulate virtual users/sensors</li>
 						  <li>expose defects</li>
-						  <li>determine the upper limit for all components</li>
+						  <li>determine the upper limit for all the testbed system  components</li>
 						</ul> 
 						<table class="imageset">
 							<tr>
@@ -250,6 +251,10 @@
 									<img class="plain" data-src="img/tsung-logo.png" width="300">
 									<p> <a href="https://locust.io/"> Tsung</a> </p>
 								</td>
+							</tr>
+						</table>
+<table class="imageset">
+							<tr>
 								<td align="center">
 									<img class="plain" data-src="img/taurus-logo.png" width="300">
 									<p> <a href="https://locust.io/"> Taurus</a> </p>
@@ -395,7 +400,7 @@
 						<h2> Monitoring </h2>
 						<h4> Infrastructure Monitoring </h4>
 						
-						<p> To monitor the state of the infrastructure, sush as</p>
+						<p> To monitor the state of the infrastructure, such as</p>
 						<ul>
 						  <li> CPU usage </li>
 						  <li> Memory usage </li>
@@ -421,7 +426,7 @@
 						</table>
 
 						<p>can do the job!</p>
-						<p> Cloud providers have also their own monitoring tools. For instance, Cloudwatch for AWS or Stackdriver for Google Cloud. </p>
+						<p> Cloud providers have also their own monitoring tools. For instance, <a href="https://aws.amazon.com/cloudwatch/">Cloudwatch</a> for AWS or <a href="https://cloud.google.com/stackdriver/">Stackdriver</a> for Google Cloud. </p>
 						<p> Sources: <a href="https://www.nagios.org/">Nagios</a>, <a href="https://www.zabbix.com/">Zabbix</a>, <a href="https://icinga.com/">Icinga</a>. </p>
 					</section>
 					<section data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
@@ -511,7 +516,11 @@
 				<section  data-markdown data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 					<script type="text/template">
 						## Proposed Solution
-						Use TSimulus as a load testing tool to simulate sensors, generate data and send it to the Big Data Platform, coupled with monitoring tools (eg, Istio / Zabbix / ELK).
+
+						* Use TSimulus as a load testing tool to simulate sensors,
+						* generate data and
+						* send it to the Big Data Platform,
+						* coupled with monitoring tools (eg, Istio / Zabbix / ELK).
 					</script>
 				</section>
 				<!-- This is the last page section -->
