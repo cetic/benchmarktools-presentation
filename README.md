@@ -1,27 +1,16 @@
-# Reveal.js template slides
+# Benchmark Tools Presentation
 
-This repository contains a template for reveal.js presentation slide.
+## Goal
 
-1. Fork this repository
-2. Setup CI/CD (project name in `.gitlab-ci` file, Openshift config)
-3. Edit `index.html`
-4. Edit main title, Authors in README.md
+Benchmark tools presentation at CETIC.
 
-### Usage
+These slides are publicly available at https://benchmarktools.presentations.cetic.be
 
-Open index.html in your browser or deploy this on OpenShift e.g. (see `.gitlab.yml`)
+## Reveal.js
 
-* presentation mode: press `s`
-* overview mode: press `escape`
-* pdf/print version: go to http://your_slides_url/?print-pdf#/
+This presentation is based on the CETIC reveal theme https://git.cetic.be/communication/revealjs_template
 
-See OpenShift usage documentation for deployment instructions: https://git.cetic.be/OpenShift/documentation/tree/master/webconsole/#tldr
-
-Result is here: https://benchmarktools.openshift.ext.cetic.be
-
-### References
-
-* https://github.com/hakimel/reveal.js/
+It uses the reveal.js framework: https://github.com/hakimel/reveal.js/
 
 ### Authors
 
